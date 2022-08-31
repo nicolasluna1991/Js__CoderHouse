@@ -34,7 +34,7 @@
 // Desafio de simulador interactivo
 // Calcular valor final de un producto seleccionado en funcion de impuestos y descuentos
 
-// debugger
+debugger
 
 let notas;
 let promedio;
