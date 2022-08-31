@@ -50,3 +50,4 @@ let misNotas= parseInt(prompt("Digite la cantidad de notas a promediar"))
     promedio = suma / misNotas;
 
 alert("El promedio es " + promedio)
+
