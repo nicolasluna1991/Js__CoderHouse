@@ -1,52 +1,37 @@
+const IVA = 1.21
+const IVAIMP = 1.35
 
-// /*consigna Pedir mediante un prompt y sumarle otro número en cada repetición,
-// realizando una salida por cada resultado */
-
-// debugger
-
-// let limite = parseInt(prompt("Ingresa un número:"));
-
-// for (let i = 0; i < limite; i++){
-//     console.log('iteracion No.', i)
-//     }
-
-// /*Pedir un texto mediante prompt, concatenar un valor en cada repetición,
-// realizando una salida por cada resultado, hasta que se ingresa "ESC" */
-
-// let entrada = prompt ("Escribe algo");
-
-// while (entrada != "ESC") {
-//     alert ("El usuario ingresó " + entrada);
-//     entrada = prompt("Escribe otra cosa");
-// }
-
-// /*consigna Pedir un número por prompt, repetir la salida del mesaje "hola"
-// la cantidad de veces ingresadas */
-
-// let num = parseInt(prompt("¿Cuantos Holas queres?"))
-
-// for (let i = 0; i < num; i++){
-//     alert("Hola")
-// }
-
-/////////////////////////////////////////////////////
-
-// Desafio de simulador interactivo
-// Calcular valor final de un producto seleccionado en funcion de impuestos y descuentos
-
-
-let notas;
-let promedio;
-let suma = 0;
-
-let misNotas= parseInt(prompt("Digite la cantidad de notas a promediar"))
-
-    for(i=0; i< misNotas; i++){
-        let notas=parseInt(prompt("Digite la nota " + i));
-        suma = suma + notas;        
+class Producto{
+    constructor(nombre, precio, stock, nacional){
+        this.nombre = nombre.toUpperCase()
+        this.precio = parseFloat(precio)
+        this.stock = parseFloat(stock)
+        this.nacional = nacional
     }
+    precioConIva(){
+        let precioIVA
+        if (this.nacional){
+            precioIVA = this.precio * IVA
+        } else{
+            precioIVA = this.precio * IVAIMP
+        }
+        return precioIVA.toFixed(2)
+    }
+    descontarStock(unidades){
+        return this.stock = this.stock - unidades
+    }
+    cotizar (unidades){
+        let resultado = this.precioConIva() * unidades
+        return resultado.toFixed(2)
+    }
+}
 
-    promedio = suma / misNotas;
+const producto1 = new Producto("RTX 3060 12GB DDR6", 113000, 10, false)
+const producto2 = new Producto("RTX 3070 8GB DDR6", 160000, 10, false)
+const producto3 = new Producto("RTX 3080 10GB DDR6", 210000, 10, false)
+const producto4 = new Producto("RX 6700 XT 12GB DDR6", 129000, 10, true)
+const producto5 = new Producto("RX 6800 XT 16GB DDR6", 180000, 10, true)
 
-alert("El promedio es " + promedio)
-
+function cargarProducto(){
+    
+}
