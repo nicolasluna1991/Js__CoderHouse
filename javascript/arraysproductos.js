@@ -20,7 +20,7 @@ function generadorAutomatico() {
 generadorAutomatico()
 
 function recorrerProductos() {
-    debugger
+    // debugger
     //el objeto del array
     for (producto of productos) {
         console.table(producto)
