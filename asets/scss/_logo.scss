@@ -1,0 +1,23 @@
+
+.header_logo{
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+    align-items: center;
+
+    & .play_logo{
+        color: #016170;
+        background-color: #ffff;
+        border-radius: 10px 0px 0px 10px;
+        font-size: 2rem;
+        padding: 5px;
+    }
+
+    & .store_logo{
+        color: #ffff;
+        background-color: #016170;
+        border-radius: 0px 10px 10px 0px;
+        font-size: 2rem;
+        padding: 5px;
+    }
+}

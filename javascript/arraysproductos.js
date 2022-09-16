@@ -19,10 +19,32 @@ function generadorAutomatico() {
 }
 generadorAutomatico()
 
-function recorrerProductos() {
-    // debugger
-    //el objeto del array
-    for (producto of productos) {
-        console.table(producto)
+// function recorrerProductos() {
+//     // debugger
+//     //el objeto del array
+//     for (producto of productos) {
+//         console.table(producto)
+//     }
+// }
+
+//funcion para filtrar los productos
+
+const inputFiltrar = document.querySelector(input)
+
+function filtrarProductos() { //FILTRAR PRODUCTOS EN LA TABLA INGRESANDO PARTE DEL NOMBRE
+    inputFiltrar.value = inputFiltrar.value.trim().toUpperCase()
+    if (inputFiltrar.value !== "") {
+        const resultado = productos.filter(producto => producto.nombre.includes(inputFiltrar.value))
+              if (resultado.length === 0) {
+                console.clear()
+                console.warn("No se encontraron productos.")
+                cargarProductos(productos)
+              } else {
+                cargarProductos(resultado)
+              }
+    } else {
+        cargarProductos(productos)
     }
 }
+
+inputFiltrar.addEventListener("input", filtrarProductos) //A medida que escribimos.

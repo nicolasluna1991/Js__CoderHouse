@@ -15,8 +15,8 @@ function agregarPlacaVideo() {
             console.warn("La placa de video ya existe en el array.")
         }
 }
-//FUNCION PARA BUSCAR PRODUCTOS
-function buscarPlacaVideo() {
+//FUNCION PARA ELIMINAR ULTIMA PLACA DE VIDEO
+function eliminarPlacaVideo() {
     placaVideo.pop()
     console.table(placaVideo)
 }
